@@ -30,3 +30,4 @@ Graphic management:
 - ESC needs to close the window an quit the program
 - Pressing the 'x' on the right corner should do the same as above
 - Mandatory use of the images of  the MiniLibX
+- Images have to be .xpm
