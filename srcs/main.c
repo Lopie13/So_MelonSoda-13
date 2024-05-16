@@ -10,9 +10,36 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "so_long.h"
+
 int     main(int argc, char **argv)
 {
+        t_vars vars;
+
         if (argc != 2)
-                return (1);
+        {
+		write(1, "ERROR\n", 6);
+		exit(1);
+        }
+//      check_file(argv[1]);
+//      vars.map = get_map(agrv[1], &vars)
+//      do stuff
         return (0);
 }
+
+	/*check_file_is_valid(argv[1]);
+	vars.map = get_map(argv[1], &vars);
+	if (vars.map != NULL)
+	{
+		init_vars(&vars);
+		check_map_valid(&vars);
+		vars.mlx = mlx_init();
+		vars.win = mlx_new_window (vars.mlx,
+				vars.win_w * 32, vars.win_h * 32, "So-Long");
+		render_map(&vars, argv);
+		mlx_string_put(vars.mlx, vars.win, 5, 10, 0xffffff, "Move: 0");
+		mlx_hook(vars.win, 2, (1L << 0), key_hook, &vars);
+		mlx_hook(vars.win, 17, (1L << 0), ft_exit, &vars);
+		mlx_loop(vars.mlx);
+	}
+	return (final_cleaner (&vars, 1), 0);*/
