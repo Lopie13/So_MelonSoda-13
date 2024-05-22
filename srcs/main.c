@@ -6,7 +6,7 @@
 /*   By: mmata-al <mmata-al@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/15 18:28:28 by mmata-al          #+#    #+#             */
-/*   Updated: 2024/05/15 19:21:32 by mmata-al         ###   ########.fr       */
+/*   Updated: 2024/05/22 16:58:59 by mmata-al         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,9 @@ int	check_file(char *argv)
 	len = 0;
 	while (argv[len])
 		len++;
-	while (len)
+	if (len < 4)
+		return (1);
+	while (len > 0)
 	{
 		if (argv[len] == 'r')
 			if (argv[len - 1] == 'e')
@@ -41,12 +43,12 @@ int	main(int argc, char **argv)
 		exit(1);
 	}
 	check_file(argv[1]);
-//	vars.map = get_map(agrv[1], &vars)
+	vars.map = get_map(argv[1], &vars);
 //	do stuff
 	return (0);
 }
 
-	/*check_file_is_valid(argv[1]);
+/* 	check_file_is_valid(argv[1]);
 	vars.map = get_map(argv[1], &vars);
 	if (vars.map != NULL)
 	{
@@ -61,4 +63,4 @@ int	main(int argc, char **argv)
 		mlx_hook(vars.win, 17, (1L << 0), ft_exit, &vars);
 		mlx_loop(vars.mlx);
 	}
-	return (final_cleaner (&vars, 1), 0);*/
+	return (final_cleaner (&vars, 1), 0); */
