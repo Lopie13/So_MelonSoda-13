@@ -12,19 +12,38 @@
 
 #include "so_long.h"
 
-int     main(int argc, char **argv)
+int	check_file(char *argv)
 {
-        t_vars vars;
+	int	len;
 
-        if (argc != 2)
-        {
+	len = 0;
+	while (argv[len])
+		len++;
+	while (len)
+	{
+		if (argv[len] == 'r')
+			if (argv[len - 1] == 'e')
+				if (argv[len - 2] == 'b')
+					if (argv[len - 3] == '.')
+						return (0);
+		len--;
+	}
+	return (1);
+}
+
+int	main(int argc, char **argv)
+{
+	t_vars vars;
+
+	if (argc != 2)
+	{
 		write(1, "ERROR\n", 6);
 		exit(1);
-        }
-//      check_file(argv[1]);
-//      vars.map = get_map(agrv[1], &vars)
-//      do stuff
-        return (0);
+	}
+	check_file(argv[1]);
+//	vars.map = get_map(agrv[1], &vars)
+//	do stuff
+	return (0);
 }
 
 	/*check_file_is_valid(argv[1]);
