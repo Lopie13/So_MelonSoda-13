@@ -6,7 +6,7 @@
 /*   By: mmata-al <mmata-al@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/15 18:28:00 by mmata-al          #+#    #+#             */
-/*   Updated: 2024/05/15 18:28:01 by mmata-al         ###   ########.fr       */
+/*   Updated: 2024/06/04 18:47:15 by mmata-al         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,17 +15,17 @@
 
 # include <stdlib.h>
 # include "../libs/minilibx-linux/mlx.h"
-//# include "../libs/get_next_line/get_next_line.h"
+# include "../libs/gnl/get_next_line_bonus.h"
 # include <fcntl.h>
 # include <stdio.h>
-//# include <X11/keysym.h>
-//# include "../libs/libft/libft.h"
+# include <X11/keysym.h>
+# include "../libs/libft+/libft.h"
 
 typedef struct s_imgs
 {
 	char		*addr;
 	int			bites_per_pxl;
-	int			endian; //<---THIS
+	int			endian;
 	int			height;
 	int			line_len;
 	int			width;
@@ -36,6 +36,10 @@ typedef struct s_imgs
 typedef struct s_assets
 {
 	//t_imgs	*asset;
+	t_imgs		*chara;
+	t_imgs		*ground;
+	t_imgs		*wall;
+	t_imgs		*gwc;
 
 }	t_assets;
 
@@ -70,5 +74,12 @@ typedef struct s_map
 }	t_map;
 
 // functions
+char	*ft_join_strings(char *s1, char *s2);
+char	**get_map(char *fullmap, t_vars *vars);
+void	ft_message_error(t_vars *vars, int assets);
+int	get_height(char **map);
+int	map_xloop(t_vars *vars, int x1, int y1, int map_y);
+int	ft_exit(t_vars *vars);
+void	put_image_to_map(char p, int x1, int y1, t_vars *v);
 
 #endif
