@@ -6,7 +6,7 @@
 /*   By: mmata-al <mmata-al@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/15 18:28:00 by mmata-al          #+#    #+#             */
-/*   Updated: 2024/06/04 18:47:15 by mmata-al         ###   ########.fr       */
+/*   Updated: 2024/06/04 19:23:19 by mmata-al         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,5 +81,11 @@ int	get_height(char **map);
 int	map_xloop(t_vars *vars, int x1, int y1, int map_y);
 int	ft_exit(t_vars *vars);
 void	put_image_to_map(char p, int x1, int y1, t_vars *v);
+void	flood_checker(t_vars *vars, char **argv);
+void	flood_fill(char **map, int x, int y);
+void	check_elements(t_vars *vars);
+t_map	map_ext(t_vars *vars, t_map map);
+void	assets_cleaner(t_vars *v);
+void	final_cleaner(t_vars *vars, int assets);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: mmata-al <mmata-al@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/04 18:45:40 by mmata-al          #+#    #+#             */
-/*   Updated: 2024/06/04 18:50:06 by mmata-al         ###   ########.fr       */
+/*   Updated: 2024/06/04 18:54:10 by mmata-al         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,29 @@ int	map_xloop(t_vars *vars, int x1, int y1, int map_y)
 	}
 	x1 = (map_x * 32);
 	return (x1);
+}
+
+
+void	flood_fill(char **map, int x, int y)
+{
+	int	w;
+	int	h;
+
+	w = 0;
+	h = 0;
+	while (map[h][w] != '\0' && map[h][w] != '\n')
+		w++;
+	while (map[h])
+		h++;
+	if (x < 0 || y < 0 || x >= w || y >= h)
+		return ;
+	if (map[y][x] == '1' || map[y][x] == 'F')
+		return ;
+	map[y][x] = 'F';
+	flood_fill(map, (x + 1), y);
+	flood_fill(map, (x - 1), y);
+	flood_fill(map, x, (y - 1));
+	flood_fill(map, x, (y + 1));
 }
 
 void	flood_checker(t_vars *vars, char **argv)

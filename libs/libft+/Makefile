@@ -6,7 +6,7 @@
 #    By: mmata-al <mmata-al@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/09 17:32:29 by mmata-al          #+#    #+#              #
-#    Updated: 2024/04/29 17:31:05 by mmata-al         ###   ########.fr        #
+#    Updated: 2024/06/04 19:25:40 by mmata-al         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -31,13 +31,13 @@ CFLAGS = -Wall -Wextra -Werror -fPIC -g
 all: $(NAME)
 
 $(NAME): $(OBJECTS)
-	$(AR) -r $@ $?
+	@$(AR) -r $@ $?
 
 bonus: $(OBJECTS) $(BOBJECTS)
-	$(AR) -r $(NAME) $?
+	@$(AR) -r $(NAME) $?
 
 %.o: %.c
-	$(CC) -c $(CFLAGS) $?
+	@$(CC) -c $(CFLAGS) $?
 
 clean:
 	@rm -f $(OBJECTS) $(BOBJECTS)
