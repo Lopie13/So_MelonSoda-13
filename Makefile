@@ -6,7 +6,7 @@
 #    By: mmata-al <mmata-al@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/10 12:18:35 by mmata-al          #+#    #+#              #
-#    Updated: 2024/06/04 19:29:38 by mmata-al         ###   ########.fr        #
+#    Updated: 2024/06/06 21:19:58 by mmata-al         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,17 +20,17 @@ LIBFT				= ./$(LIB_DIR)libft+/libft.a
 
 #Sources:
 SOLONG	=	$(SRC_DIR)main.c \
-				$(SRC_DIR)checkmap.c \
-				$(SRC_DIR)cleaner.c \
-				$(SRC_DIR)get_utils.c \
-				$(SRC_DIR)gets.c \
-				$(SRC_DIR)put_image.c \
-				$(SRC_DIR)put_img_utils.c \
-				$(SRC_DIR)utils.c \
-				$(SRC_DIR)checkutils.c
+		$(SRC_DIR)checkmap.c \
+		$(SRC_DIR)cleaner.c \
+		$(SRC_DIR)get_utils.c \
+		$(SRC_DIR)gets.c \
+		$(SRC_DIR)put_image-assets_utils.c \
+		$(SRC_DIR)put_img_utils.c \
+		$(SRC_DIR)utils.c \
+		$(SRC_DIR)checkutils.c
 
-GNL 	=		$(LIB_DIR)get_next_line_bonus.c \
-							$(LIB_DIR)get_next_line_utils_bonus.c
+GNL 	=	$(SRC_DIR)gnl/get_next_line_bonus.c \
+		$(SRC_DIR)gnl/get_next_line_utils_bonus.c
 						
 SRCS = $(SOLONG) $(GNL)
 OBJ = $(patsubst $(SRC_DIR)%.c,$(OBJ_DIR)%.o,$(SRCS))

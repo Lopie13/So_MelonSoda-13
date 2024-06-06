@@ -19,25 +19,25 @@ static void	check_is_rectangular(t_vars *vars)
 {
 	int	map_x;
 	int	map_y;
-	int	backup;
+	int	backup_x;
 	int	height;
 
 	map_y = 0;
 	map_x = 0;
-	backup = 0;
+	backup_x = 0;
 	height = get_height(vars->map);
 	while (map_y != height)
 	{
 		while (vars->map[map_y][map_x] != '\0')
 			map_x++;
 		map_y++;
-		if (backup != 0)
+		if (backup_x != 0)
 		{
-			if (backup != map_x)
+			if (backup_x != map_x)
 				ft_error(vars, "Error");
 		}
 		else
-			backup = map_x;
+			backup_x = map_x;
 	}
 }
 

@@ -56,12 +56,6 @@ void	put_image_to_map(char p, int x1, int y1, t_vars *v)
 		v->x_p = x1;
 		mlx_put_image_to_window(v->mlx, v->win, v->assets->gwc->img, x1, y1);
 	}
-/* 	else if (p == 'L')
-	{
-		mlx_put_image_to_window(v->mlx, v->win, v->assets->gwl->img, x1, y1);
-		v->lantern++;
-		v->there_was_lantern++;
-	} */
 	else
 		mlx_put_image_to_window(v->mlx, v->win, v->assets->ground->img, x1, y1);
 }

@@ -6,18 +6,11 @@
 /*   By: mmata-al <mmata-al@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/22 16:40:32 by mmata-al          #+#    #+#             */
-/*   Updated: 2024/06/04 18:32:33 by mmata-al         ###   ########.fr       */
+/*   Updated: 2024/06/06 21:01:31 by mmata-al         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
-
-void	ft_message_error(t_vars *vars, int assets)
-{
-	write(1, "ERROR\n", 7);
-	//final_cleaner(vars, assets);
-	exit(1);
-}
 
 char	*liner(int fd, char *line, char *ml)
 {
@@ -50,7 +43,7 @@ int	get_height(char **map)
 	return (i);
 }
 
-char	**get_map(char *fullmap, t_vars *vars)
+char	**get_map(char *mapfile, t_vars *vars)
 {
         char	*line;
 	char	*maplined;
@@ -58,7 +51,7 @@ char	**get_map(char *fullmap, t_vars *vars)
 
 	line = "";
 	maplined = ft_strdup("");
-	fd = open(fullmap, O_RDONLY);
+	fd = open(mapfile, O_RDONLY);
 	if (fd < 0)
 		ft_message_error(vars, 0);
 	maplined = liner(fd, line, maplined);

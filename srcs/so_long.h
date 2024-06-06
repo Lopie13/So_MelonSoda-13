@@ -6,7 +6,7 @@
 /*   By: mmata-al <mmata-al@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/15 18:28:00 by mmata-al          #+#    #+#             */
-/*   Updated: 2024/06/04 19:23:19 by mmata-al         ###   ########.fr       */
+/*   Updated: 2024/06/06 21:23:31 by mmata-al         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 # include <stdlib.h>
 # include "../libs/minilibx-linux/mlx.h"
-# include "../libs/gnl/get_next_line_bonus.h"
+# include "./gnl/get_next_line_bonus.h"
 # include <fcntl.h>
 # include <stdio.h>
 # include <X11/keysym.h>
@@ -56,10 +56,8 @@ typedef struct s_vars
 	int				e_y;
 	int				movement;
 	char			**map;
-	//int				collect;
-	//int				lantern;
-	//int				there_was_lantern;
-	//int				left;
+	int				collected;
+	int				left;
 	t_assets		*assets;
 }	t_vars;
 
@@ -68,7 +66,6 @@ typedef struct s_map
 	int	c;
 	int	p;
 	int	e;
-	int	l;
 	int	x;
 	int	y;
 }	t_map;
@@ -87,5 +84,13 @@ void	check_elements(t_vars *vars);
 t_map	map_ext(t_vars *vars, t_map map);
 void	assets_cleaner(t_vars *v);
 void	final_cleaner(t_vars *vars, int assets);
+void	check_map(t_vars *vars);
+t_imgs	*new_img(int w, int h, t_vars *mlx, t_vars *window);
+t_imgs	*new_file_img(char *path, void *mlx, void *window);
+void	put_img_to_img(t_imgs *dst, t_imgs *src, int x, int y);
+char	*error_message(t_map *map);
+int	check_c(t_vars *vars);
+int	check_e(t_vars *vars);
+void	ft_error(t_vars *vars, char *message);
 
 #endif

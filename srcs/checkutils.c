@@ -29,8 +29,6 @@ t_map	map_ext(t_vars *vars, t_map map)
 				map.p++;
 			else if (vars->map[map.y][map.x] == 'C')
 				map.c++;
-			else if (vars->map[map.y][map.x] == 'L')
-				map.l++;
 			else if (vars->map[map.y][map.x] != '1' &&
 				vars->map[map.y][map.x] != '0')
 				unknown_element(vars, vars->map[map.y][map.x]);
@@ -40,23 +38,6 @@ t_map	map_ext(t_vars *vars, t_map map)
 	return (map);
 }
 
-static char	*error_message(t_map *map)
-{
-	if (map->c == 0)
-		return ("Error: missing 'C' element");
-	else if (map->e == 0)
-		return ("Error: missing 'E' element");
-	else if (map->p == 0)
-		return ("Error: missing 'P' element");
-	else if (map->p > 1)
-		return ("Error: there is more than one 'P' element");
-	else if (map->l > 1)
-		return ("Error: there is more than one 'L' element");
-	else if (map->e > 1)
-		return ("Error: there is more than one 'E' element");
-	return ("Error: missing map");
-}
-
 void	check_elements(t_vars *vars)
 {
 	t_map	map;
@@ -64,12 +45,60 @@ void	check_elements(t_vars *vars)
 	map.c = 0;
 	map.p = 0;
 	map.e = 0;
-	map.l = 0;
 	map.y = get_height(vars->map);
 	map = map_ext(vars, map);
-/* 	if (map.l == 1)
-		vars->lantern++; */
 	if (map.e == 0 || map.p == 0 || map.c == 0 || map.p > 1
-		|| map.l > 1 || map.e > 1)
+		|| map.e > 1)
 		ft_error(vars, error_message(&map));
+}
+
+
+int	check_c(t_vars *vars)
+{
+	int	i;
+	int	n;
+
+	i = 0;
+	n = 0;
+	while (vars->map[i])
+	{
+		while (vars->map[i][n] != '\0' && vars->map[i][n] != '\n')
+		{
+			n++;
+			if (vars->map[i][n - 1] == 'C')
+			{
+				ft_printf("Error!");
+				final_cleaner(vars, 2);
+				exit(1);
+			}
+		}
+		n = 0;
+		i++;
+	}
+	return (1);
+}
+
+int	check_e(t_vars *vars)
+{
+	int	i;
+	int	n;
+
+	i = 0;
+	n = 0;
+	while (vars->map[i])
+	{
+		while (vars->map[i][n] != '\0' && vars->map[i][n] != '\n')
+		{
+			n++;
+			if (vars->map[i][n] == 'E')
+			{
+				ft_printf("Error!");
+				final_cleaner(vars, 2);
+				exit(1);
+			}
+		}
+		n = 0;
+		i++;
+	}
+	return (1);
 }

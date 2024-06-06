@@ -22,10 +22,3 @@ char	*ft_join_strings(char *s1, char *s2)
 	ptr[i] = '\0';
 	return (ptr);
 }
-
-void	ft_message_error(t_vars *vars, int assets)
-{
-	write(1, "ERROR\n", 7);
-	final_cleaner(vars, assets);
-	exit(1);
-}
