@@ -48,7 +48,7 @@ $(LIBFT):
 all: $(NAME)
 
 $(NAME): $(OBJ) $(LIBFT)
-	@$(CC) $(CFLAGS) $(OBJ) $(LDFLAGS) -o $(NAME)
+	@$(CC) $(CFLAGS) $(OBJ) $(LDFLAGS) -L./minilibx-linux -lmlx_Linux -lXext -lX11 -o $(NAME)
 
 $(OBJ_DIR)%.o: $(SRC_DIR)%.c
 	@mkdir -p $(@D)
