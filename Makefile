@@ -6,7 +6,7 @@
 #    By: lopie13 <lopie13@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/10 12:18:35 by mmata-al          #+#    #+#              #
-#    Updated: 2024/06/17 19:10:22 by lopie13          ###   ########.fr        #
+#    Updated: 2024/06/17 19:16:35 by lopie13          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -61,7 +61,7 @@ clean:
 
 fclean: clean
 	@$(RM) $(NAME)
-	@$(RM) $(LIBFT)
+	@$(RM) ./$(LIB_DIR)libft+/libft.a
 
 re: fclean all
 
