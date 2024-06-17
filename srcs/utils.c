@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mmata-al <mmata-al@student.42.fr>          +#+  +:+       +#+        */
+/*   By: lopie13 <lopie13@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/04 18:45:40 by mmata-al          #+#    #+#             */
-/*   Updated: 2024/06/04 18:54:10 by mmata-al         ###   ########.fr       */
+/*   Updated: 2024/06/17 19:14:11 by lopie13          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,4 +73,14 @@ int	ft_exit(t_vars *vars)
 	final_cleaner(vars, 1);
 	exit(1);
 	return (0);
+}
+
+int	ft_strcmp(char *s1, char *s2)
+{
+	int i;
+
+	i = 0;
+	while (s1[i] == s2[i] && s1[i] != '\0' && s2[i] != '\0')
+		i++;
+	return (s1[i] - s2[i]);
 }

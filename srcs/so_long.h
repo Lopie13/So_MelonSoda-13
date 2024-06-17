@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   so_long.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mmata-al <mmata-al@student.42.fr>          +#+  +:+       +#+        */
+/*   By: lopie13 <lopie13@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/15 18:28:00 by mmata-al          #+#    #+#             */
-/*   Updated: 2024/06/06 21:23:31 by mmata-al         ###   ########.fr       */
+/*   Updated: 2024/06/17 19:14:23 by lopie13          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,5 +92,7 @@ char	*error_message(t_map *map);
 int	check_c(t_vars *vars);
 int	check_e(t_vars *vars);
 void	ft_error(t_vars *vars, char *message);
+int	ft_exit(t_vars *vars);
+int	ft_strcmp(char *s1, char *s2);
 
 #endif

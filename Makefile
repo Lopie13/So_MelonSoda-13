@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: mmata-al <mmata-al@student.42.fr>          +#+  +:+       +#+         #
+#    By: lopie13 <lopie13@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/10 12:18:35 by mmata-al          #+#    #+#              #
-#    Updated: 2024/06/06 21:19:58 by mmata-al         ###   ########.fr        #
+#    Updated: 2024/06/17 19:10:22 by lopie13          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,8 @@ SRC_DIR				= srcs/
 OBJ_DIR				= obj/
 LIB_DIR				= libs/
 LDFLAGS 			= -L./$(LIB_DIR)libft+ -lft
-LIBFT				= ./$(LIB_DIR)libft+/libft.a
+LIBFT				= ./$(LIB_DIR)libft+/
+MLX				= -L./libs/minilibx-linux -lmlx_Linux -lXext -lX11
 
 #Sources:
 SOLONG	=	$(SRC_DIR)main.c \
@@ -48,7 +49,7 @@ $(LIBFT):
 all: $(NAME)
 
 $(NAME): $(OBJ) $(LIBFT)
-	@$(CC) $(CFLAGS) $(OBJ) $(LDFLAGS) -L./minilibx-linux -lmlx_Linux -lXext -lX11 -o $(NAME)
+	@$(CC) $(CFLAGS) $(OBJ) $(LDFLAGS) $(MLX) -o $(NAME)
 
 $(OBJ_DIR)%.o: $(SRC_DIR)%.c
 	@mkdir -p $(@D)

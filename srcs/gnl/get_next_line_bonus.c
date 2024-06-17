@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line_bonus.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mmata-al <mmata-al@student.42.fr>          +#+  +:+       +#+        */
+/*   By: lopie13 <lopie13@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/23 11:46:45 by mmata-al          #+#    #+#             */
-/*   Updated: 2024/04/10 13:34:57 by mmata-al         ###   ########.fr       */
+/*   Updated: 2024/06/17 19:05:04 by lopie13          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ char	*get_next_line(int fd)
 	return (melon);
 }
 
-#include <fcntl.h>
+/* #include <fcntl.h>
 
 int	main(void)
 {
@@ -65,4 +65,4 @@ while (1)
 close(fd1);
 close(fd2);
 return (0);
-}
+} */

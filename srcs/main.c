@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mmata-al <mmata-al@student.42.fr>          +#+  +:+       +#+        */
+/*   By: lopie13 <lopie13@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/15 18:28:28 by mmata-al          #+#    #+#             */
-/*   Updated: 2024/05/22 16:58:59 by mmata-al         ###   ########.fr       */
+/*   Updated: 2024/06/17 19:04:48 by lopie13          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,26 +14,19 @@
 
 int	key_hook(int keycode, t_vars *vars)
 {
-	if (keycode == XK_d)
+/* 	if (keycode == XK_d)
 		move_right(vars);
 	else if (keycode == XK_a)
 		move_left(vars);
 	else if (keycode == XK_w)
 		move_up(vars);
 	else if (keycode == XK_s)
-		move_down(vars);
-	else if (keycode == XK_Escape)
+		move_down(vars);  add the else below*/
+	if (keycode == XK_Escape)
 	{
 		final_cleaner(vars, 1);
 		exit(1);
 	}
-	return (0);
-}
-
-int	ft_exit(t_vars *v)
-{
-	final_cleaner(v, 1);
-	exit(1);
 	return (0);
 }
 
@@ -94,7 +87,7 @@ int	main(int argc, char **argv)
 	check_file(argv[1]);
 	vars.map = get_map(argv[1], &vars);
 //	do stuff
-    if (vars.map != NULL)
+	if (vars.map != NULL)
 	{
 		init_vars(&vars);
 		check_map(&vars);
