@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   error.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mmata-al <mmata-al@student.42.fr>          +#+  +:+       +#+        */
+/*   By: lopie13 <lopie13@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/06 21:00:37 by mmata-al          #+#    #+#             */
-/*   Updated: 2024/06/06 21:04:30 by mmata-al         ###   ########.fr       */
+/*   Updated: 2024/06/20 10:05:49 by lopie13          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ void	ft_message_error(t_vars *vars, int assets)
 	exit(1);
 }
 
-void	ft_error(t_vars *vars, char *message)
+/* void	ft_error(t_vars *vars, char *message)
 {
 	int	x;
 
@@ -47,4 +47,4 @@ void	ft_error(t_vars *vars, char *message)
 	free (vars->map);
 	ft_printf("%s", message);
 	exit (1);
-}
+} */
