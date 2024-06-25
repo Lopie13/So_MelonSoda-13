@@ -6,7 +6,7 @@
 /*   By: lopie13 <lopie13@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/15 18:28:00 by mmata-al          #+#    #+#             */
-/*   Updated: 2024/06/17 19:14:23 by lopie13          ###   ########.fr       */
+/*   Updated: 2024/06/25 10:32:08 by lopie13          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,9 @@ typedef struct s_assets
 	t_imgs		*chara;
 	t_imgs		*ground;
 	t_imgs		*wall;
+	t_imgs		*door;
 	t_imgs		*gwc;
+	t_imgs		*gwd;
 
 }	t_assets;
 

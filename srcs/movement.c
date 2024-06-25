@@ -1,13 +1,13 @@
 #include "so_long.h"
 
-/* void	collected(t_vars *v)
+void	collected(t_vars *v)
 {
-	v->collect--;
+	v->collected--;
 	v->map[(v->y_p / 32)][(v->x_p / 32)] = '0';
-	if (v->collect == 0)
+	if (v->collected == 0)
 		mlx_put_image_to_window(v->mlx, v->win, v->assets->gwd->img,
 			v->e_x, v->e_y);
-} */
+}
 
 void	move_left(t_vars *v)
 {

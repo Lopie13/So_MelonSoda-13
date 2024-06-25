@@ -6,7 +6,7 @@
 /*   By: lopie13 <lopie13@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/15 18:28:28 by mmata-al          #+#    #+#             */
-/*   Updated: 2024/06/17 19:04:48 by lopie13          ###   ########.fr       */
+/*   Updated: 2024/06/25 10:35:41 by lopie13          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,7 +72,8 @@ int	check_file(char *argv)
 	len = ft_strlen(argv);
 	if (len >= 4 && ft_strcmp(&argv[len - 4], ".ber") == 0)
 		return (0);
-	return (1);
+	write(1, "ERROR: map file not ending with .ber!\n", 37);
+	exit (1);
 }
 
 int	main(int argc, char **argv)
@@ -81,7 +82,7 @@ int	main(int argc, char **argv)
 
 	if (argc != 2)
 	{
-		write(1, "ERROR\n", 6);
+		write(1, "ERROR: invalid number of arguments!\n", 6);
 		exit(1);
 	}
 	check_file(argv[1]);
