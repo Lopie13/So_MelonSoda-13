@@ -26,7 +26,7 @@ void	assets_initiator2(t_vars *v)
 {
 	v->assets->gwc = new_img(32, 32, v->mlx, v->win);
 	put_img_to_img(v->assets->gwc, v->assets->ground, 0, 0);
-	v->assets->wall = new_file_img("Assets/wall.xpm", v->mlx, v->win);
+	v->assets->wall = new_file_img("../assets/temp/wall.xpm", v->mlx, v->win);
 }
 
 void	assets_initiator(t_vars *v)
@@ -43,13 +43,13 @@ void	put_image_to_map(char p, int x1, int y1, t_vars *v)
 {
 	if (p == '1')
 		mlx_put_image_to_window(v->mlx, v->win, v->assets->wall->img, x1, y1);
-	/* else if (p == 'C')
+	else if (p == 'C')
 	{
-		mlx_put_image_to_window(v->mlx, v->win, v->assets->gwp->img, x1, y1);
-		v->collect++;
+		mlx_put_image_to_window(v->mlx, v->win, v->assets->gwcoll->img, x1, y1);
+		v->collected++;
 	}
 	else if (p == 'E')
-		invisible_door(v, x1, y1); */
+		invisible_door(v, x1, y1);
 	else if (p == 'P')
 	{
 		v->y_p = y1;

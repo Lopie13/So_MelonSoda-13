@@ -6,7 +6,7 @@
 /*   By: lopie13 <lopie13@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/15 18:28:00 by mmata-al          #+#    #+#             */
-/*   Updated: 2024/06/25 10:32:08 by lopie13          ###   ########.fr       */
+/*   Updated: 2024/06/27 14:42:37 by lopie13          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,7 @@ typedef struct s_assets
 	t_imgs		*door;
 	t_imgs		*gwc;
 	t_imgs		*gwd;
+	t_imgs		*gwcoll;
 
 }	t_assets;
 
@@ -96,5 +97,6 @@ int	check_e(t_vars *vars);
 void	ft_error(t_vars *vars, char *message);
 int	ft_exit(t_vars *vars);
 int	ft_strcmp(char *s1, char *s2);
+void	assets_initiator(t_vars *v);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: lopie13 <lopie13@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/04 18:45:40 by mmata-al          #+#    #+#             */
-/*   Updated: 2024/06/17 19:14:11 by lopie13          ###   ########.fr       */
+/*   Updated: 2024/06/27 14:10:39 by lopie13          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,7 @@ void	flood_checker(t_vars *vars, char **argv)
 	final_cleaner(vars, 0);
 	vars->map = get_map(argv[1], vars);
 	vars->assets = malloc(sizeof(t_assets));
-	//assets_initiator(vars);
+	assets_initiator(vars);
 }
 
 int	ft_exit(t_vars *vars)
