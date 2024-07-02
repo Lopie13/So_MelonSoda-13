@@ -6,7 +6,7 @@
 /*   By: lopie13 <lopie13@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/04 18:45:40 by mmata-al          #+#    #+#             */
-/*   Updated: 2024/06/27 14:10:39 by lopie13          ###   ########.fr       */
+/*   Updated: 2024/07/02 14:52:23 by lopie13          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,4 +83,11 @@ int	ft_strcmp(char *s1, char *s2)
 	while (s1[i] == s2[i] && s1[i] != '\0' && s2[i] != '\0')
 		i++;
 	return (s1[i] - s2[i]);
+}
+
+void	invisible_door(t_vars *v, int x1, int y1)
+{
+	mlx_put_image_to_window(v->mlx, v->win, v->assets->ground->img, x1, y1);
+	v->e_x = x1;
+	v->e_y = y1;
 }

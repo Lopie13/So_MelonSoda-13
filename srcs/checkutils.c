@@ -55,7 +55,7 @@ void	check_elements(t_vars *vars)
 
 int	check_c(t_vars *vars)
 {
-/* 	int	i;
+	int	i;
 	int	n;
 
 	i = 0;
@@ -74,14 +74,14 @@ int	check_c(t_vars *vars)
 		}
 		n = 0;
 		i++;
-	} */
+	}
 	vars->map[0][0] = 1;
 	return (1);
 }
 
 int	check_e(t_vars *vars)
 {
-/* 	int	i;
+	int	i;
 	int	n;
 
 	i = 0;
@@ -100,7 +100,7 @@ int	check_e(t_vars *vars)
 		}
 		n = 0;
 		i++;
-	} */
+	}
 	vars->map[0][0] = 1;
 	return (1);
 }

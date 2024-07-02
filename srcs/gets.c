@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   gets.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mmata-al <mmata-al@student.42.fr>          +#+  +:+       +#+        */
+/*   By: lopie13 <lopie13@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/22 16:40:32 by mmata-al          #+#    #+#             */
-/*   Updated: 2024/06/06 21:01:31 by mmata-al         ###   ########.fr       */
+/*   Updated: 2024/07/02 15:14:49 by lopie13          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,4 +59,32 @@ char	**get_map(char *mapfile, t_vars *vars)
 	if (!maplined)
 		ft_message_error(vars, 0);
 	return (ft_split(maplined, '\n'));
+}
+
+void	get_player(t_vars *vars)
+{
+	int	map_y;
+	int	backup_w;
+	int	map_x;
+
+	map_y = 0;
+	backup_w = vars->win_w;
+	while (vars->win_h > 0)
+	{
+		map_x = 0;
+		while (vars->win_w > 0)
+		{
+			if (vars->map[map_y][map_x] == 'P')
+			{
+				vars->x_p = map_x;
+				vars->y_p = map_y;
+			}
+			vars->win_w--;
+			map_x++;
+		}
+		vars->win_w = backup_w;
+		map_y++;
+		vars->win_h--;
+	}
+	init_vars(vars);
 }

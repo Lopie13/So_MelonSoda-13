@@ -15,27 +15,39 @@ void	assets_cleaner(t_vars *v)
 	free(v->assets->chara);
 	mlx_destroy_image(v->mlx, v->assets->ground->img);
 	free(v->assets->ground);
-	/* mlx_destroy_image(v->mlx, v->assets->gwc2->img);
-	free(v->assets->gwc2); */
+	mlx_destroy_image(v->mlx, v->assets->door->img);
+	free(v->assets->door);
+	mlx_destroy_image(v->mlx, v->assets->coin->img);
+	free(v->assets->coin);
+	mlx_destroy_image(v->mlx, v->assets->gwd->img);
+	free(v->assets->gwd);
 	mlx_destroy_image(v->mlx, v->assets->gwc->img);
 	free(v->assets->gwc);
+	mlx_destroy_image(v->mlx, v->assets->gwcoll->img);
+	free(v->assets->gwcoll);
 	assets_cleaner2(v);
 }
 
 void	assets_initiator2(t_vars *v)
 {
-	v->assets->gwc = new_img(32, 32, v->mlx, v->win);
-	put_img_to_img(v->assets->gwc, v->assets->ground, 0, 0);
 	v->assets->wall = new_file_img("../assets/temp/wall.xpm", v->mlx, v->win);
+	v->assets->coin = new_file_img("../assets/temp/coin.xpm", v->mlx, v->win);
+	v->assets->gwcoll = new_img(32, 32, v->mlx, v->win);
+	put_img_to_img(v->assets->gwcoll, v->assets->ground, 0, 0);
+	put_img_to_img(v->assets->gwcoll, v->assets->coin, 0, 0);
 }
 
 void	assets_initiator(t_vars *v)
 {
 	v->assets->chara = new_file_img("../assets/temp/character.xpm", v->mlx, v->win);
 	v->assets->ground = new_file_img("../assets/temp/ground.xpm", v->mlx, v->win);
+	v->assets->door = new_file_img("../assets/temp/closeddoor.xpm", v->mlx, v->win);
 	v->assets->gwc = new_img(32, 32, v->mlx, v->win);
 	put_img_to_img(v->assets->gwc, v->assets->ground, 0, 0);
 	put_img_to_img(v->assets->gwc, v->assets->chara, 0, 0);
+	v->assets->gwd = new_img(32, 32, v->mlx, v->win);
+	put_img_to_img(v->assets->gwd, v->assets->ground, 0, 0);
+	put_img_to_img(v->assets->gwd, v->assets->door, 0, 0);
 	assets_initiator2(v);
 }
 

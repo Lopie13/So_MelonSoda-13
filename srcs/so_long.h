@@ -6,7 +6,7 @@
 /*   By: lopie13 <lopie13@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/15 18:28:00 by mmata-al          #+#    #+#             */
-/*   Updated: 2024/06/27 14:42:37 by lopie13          ###   ########.fr       */
+/*   Updated: 2024/07/02 16:06:13 by lopie13          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,7 @@ typedef struct s_assets
 	t_imgs		*ground;
 	t_imgs		*wall;
 	t_imgs		*door;
+	t_imgs		*coin;
 	t_imgs		*gwc;
 	t_imgs		*gwd;
 	t_imgs		*gwcoll;
@@ -98,5 +99,8 @@ void	ft_error(t_vars *vars, char *message);
 int	ft_exit(t_vars *vars);
 int	ft_strcmp(char *s1, char *s2);
 void	assets_initiator(t_vars *v);
+void	invisible_door(t_vars *v, int x1, int y1);
+void	get_player(t_vars *vars);
+void	init_vars(t_vars *vars);
 
 #endif
