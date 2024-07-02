@@ -21,8 +21,6 @@ void	assets_cleaner(t_vars *v)
 	free(v->assets->coin);
 	mlx_destroy_image(v->mlx, v->assets->gwd->img);
 	free(v->assets->gwd);
-	mlx_destroy_image(v->mlx, v->assets->gwc->img);
-	free(v->assets->gwc);
 	mlx_destroy_image(v->mlx, v->assets->gwcoll->img);
 	free(v->assets->gwcoll);
 	assets_cleaner2(v);

@@ -62,20 +62,21 @@ int	check_c(t_vars *vars)
 	n = 0;
 	while (vars->map[i])
 	{
+		ft_printf("%s\n", vars->map[i]);
 		while (vars->map[i][n] != '\0' && vars->map[i][n] != '\n')
 		{
 			n++;
 			if (vars->map[i][n - 1] == 'C')
 			{
-				ft_printf("Error!");
+				/* ft_printf("Error! CHECK_C");
 				final_cleaner(vars, 2);
-				exit(1);
+				exit(1); */
 			}
 		}
 		n = 0;
 		i++;
 	}
-	vars->map[0][0] = 1;
+	//vars->map[0][0] = 1;
 	return (1);
 }
 
@@ -93,14 +94,14 @@ int	check_e(t_vars *vars)
 			n++;
 			if (vars->map[i][n] == 'E')
 			{
-				ft_printf("Error!");
+				/* ft_printf("Error! CHECK_E");
 				final_cleaner(vars, 2);
-				exit(1);
+				exit(1); */
 			}
 		}
 		n = 0;
 		i++;
 	}
-	vars->map[0][0] = 1;
+	//vars->map[0][0] = 1;
 	return (1);
 }
