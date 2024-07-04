@@ -6,7 +6,7 @@
 /*   By: lopie13 <lopie13@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/04 18:45:40 by mmata-al          #+#    #+#             */
-/*   Updated: 2024/07/02 14:52:23 by lopie13          ###   ########.fr       */
+/*   Updated: 2024/07/04 11:36:01 by lopie13          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ void	flood_fill(char **map, int x, int y)
 
 void	flood_checker(t_vars *vars, char **argv)
 {
-	//get_player(vars);
+	get_player(vars);
 	flood_fill(vars->map, vars->x_p, vars->y_p);
 	check_c(vars);
 	check_e(vars);
