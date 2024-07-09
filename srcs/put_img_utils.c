@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   put_img_utils.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mmata-al <mmata-al@student.42.fr>          +#+  +:+       +#+        */
+/*   By: lopie13 <lopie13@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/22 16:33:00 by mmata-al          #+#    #+#             */
-/*   Updated: 2024/05/22 16:33:04 by mmata-al         ###   ########.fr       */
+/*   Updated: 2024/07/09 20:07:29 by lopie13          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ t_imgs	*new_img(int w, int h, t_vars *mlx, t_vars *window)
 			&(image->line_len), &(image->endian));
 	image->width = w;
 	image->height = h;
+	//ft_printf("\n\nw=%d\n h=%d\n wid=%d\n hei=%d\n\n", w, h, image->width, image->height);
 	return (image);
 }
 
@@ -31,6 +32,7 @@ t_imgs	*new_file_img(char *path, void *mlx, void *window)
 	t_imgs	*image;
 
 	image = (t_imgs *)malloc(sizeof(t_imgs));
+	//ft_printf("W: %d - H: %d\n", image->width, image->height);
 	image->win = window;
 	image->img = mlx_xpm_file_to_image(mlx, path, &image->width,
 			&image->height);
@@ -67,6 +69,8 @@ void	put_img_to_img(t_imgs *dst, t_imgs *src, int x, int y)
 	int	j;
 
 	i = 0;
+	//ft_printf("1\n");
+	//ft_printf("%d\n", src->width);
 	while (i < src->width)
 	{
 		j = 0;
