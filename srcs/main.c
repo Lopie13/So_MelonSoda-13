@@ -6,7 +6,7 @@
 /*   By: lopie13 <lopie13@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/15 18:28:28 by mmata-al          #+#    #+#             */
-/*   Updated: 2024/06/27 14:46:37 by lopie13          ###   ########.fr       */
+/*   Updated: 2024/07/13 09:43:25 by lopie13          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,15 @@
 
 int	key_hook(int keycode, t_vars *vars)
 {
-/* 	if (keycode == XK_d)
+	if (keycode == XK_d)
 		move_right(vars);
 	else if (keycode == XK_a)
 		move_left(vars);
 	else if (keycode == XK_w)
 		move_up(vars);
 	else if (keycode == XK_s)
-		move_down(vars);  add the else below*/
-	if (keycode == XK_Escape)
+		move_down(vars);
+	else if (keycode == XK_Escape)
 	{
 		final_cleaner(vars, 1);
 		exit(1);
@@ -101,6 +101,6 @@ int	main(int argc, char **argv)
 		mlx_hook(vars.win, 17, (1L << 0), ft_exit, &vars);
 		mlx_loop(vars.mlx);
 	}
-	//return (final_cleaner (&vars, 1), 0);
-	return (0);
+	return (final_cleaner (&vars, 1), 0);
+	//return (0);
 }

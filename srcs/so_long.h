@@ -6,7 +6,7 @@
 /*   By: lopie13 <lopie13@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/15 18:28:00 by mmata-al          #+#    #+#             */
-/*   Updated: 2024/07/02 16:06:13 by lopie13          ###   ########.fr       */
+/*   Updated: 2024/07/13 10:32:26 by lopie13          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,5 +102,14 @@ void	assets_initiator(t_vars *v);
 void	invisible_door(t_vars *v, int x1, int y1);
 void	get_player(t_vars *vars);
 void	init_vars(t_vars *vars);
+void	put_text(t_vars *v);
+void	exit_verifier(t_vars *v, int xy, int vet);
+void	exit_door(t_vars *v);
+void	move_left(t_vars *v);
+void	move_right(t_vars *v);
+void	move_up(t_vars *v);
+void	move_down(t_vars *v);
+int	key_hook(int keycode, t_vars *vars);
+void	move_idk(t_vars *v);
 
 #endif

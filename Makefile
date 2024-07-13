@@ -6,7 +6,7 @@
 #    By: lopie13 <lopie13@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/10 12:18:35 by mmata-al          #+#    #+#              #
-#    Updated: 2024/06/20 10:04:28 by lopie13          ###   ########.fr        #
+#    Updated: 2024/07/13 10:32:48 by lopie13          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,7 +29,9 @@ SOLONG	=	$(SRC_DIR)main.c \
 		$(SRC_DIR)put_img_utils.c \
 		$(SRC_DIR)utils.c \
 		$(SRC_DIR)checkutils.c \
-		$(SRC_DIR)error.c
+		$(SRC_DIR)error.c \
+		$(SRC_DIR)movement.c \
+		$(SRC_DIR)extras.c
 
 GNL 	=	$(SRC_DIR)gnl/get_next_line_bonus.c \
 		$(SRC_DIR)gnl/get_next_line_utils_bonus.c

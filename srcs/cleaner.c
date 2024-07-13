@@ -26,3 +26,9 @@ void	final_cleaner(t_vars *vars, int assets)
 		free(vars->mlx);
 	}
 }
+
+void	exit_door(t_vars *v)
+{
+	final_cleaner(v, 1);
+	exit(1);
+}
