@@ -23,9 +23,9 @@ void	move_left(t_vars *v)
 	if (v->map[(v->y_p / 32)][(v->x_p / 32)] == 'C')
 		collected(v);
 	v->left = 1;
-/* 	mlx_put_image_to_window(v->mlx, v->win,
-		v->assets->gwc2->img,
-		v->x_p, v->y_p); */
+	mlx_put_image_to_window(v->mlx, v->win,
+		v->assets->gwc->img,
+		v->x_p, v->y_p);
 }
 
 void	move_right(t_vars *v)
@@ -55,6 +55,11 @@ void	move_up(t_vars *v)
 		exit_verifier(v, 1, 0);
 	else if ((v)->map[((v)->y_p / 32) - 1][((v)->x_p / 32)] != '1')
 	{
+		if (v->map[(v->y_p / 32) - 1][(v->x_p / 32)] == 'C')
+		{
+			v->map[(v->y_p / 32) - 1][(v->x_p / 32)] = 'P';
+			collected(v);
+		}
 		(v)->y_p -= 32;
 		put_text(v);
 	}
@@ -69,6 +74,11 @@ void	move_down(t_vars *v)
 		exit_verifier(v, 1, 1);
 	else if (v->map[(v->y_p / 32) + 1][(v->x_p / 32)] != '1')
 	{
+		if (v->map[(v->y_p / 32) + 1][(v->x_p / 32)] == 'C')
+		{
+			v->map[(v->y_p / 32) + 1][(v->x_p / 32)] = 'P';
+			collected(v);
+		}	
 		v->y_p += 32;
 		put_text(v);
 	}

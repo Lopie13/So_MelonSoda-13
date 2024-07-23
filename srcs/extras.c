@@ -48,9 +48,9 @@ void	put_text(t_vars *v)
 
 void	move_idk(t_vars *v)
 {
-	if ((v)->map[((v)->y_p / 32)][((v)->x_p / 32)] == 'C')
-		collected(v);
-	else if (v->left == 1)
+	/* if ((v)->map[((v)->y_p / 32)][((v)->x_p / 32)] == 'C')
+		collected(v); */
+	if (v->left == 1)
 	{
 		mlx_put_image_to_window(v->mlx, v->win,
 			v->assets->gwc->img, v->x_p, v->y_p);
