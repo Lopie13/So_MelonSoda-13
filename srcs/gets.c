@@ -6,7 +6,7 @@
 /*   By: lopie13 <lopie13@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/22 16:40:32 by mmata-al          #+#    #+#             */
-/*   Updated: 2024/07/02 15:14:49 by lopie13          ###   ########.fr       */
+/*   Updated: 2024/07/23 17:57:43 by lopie13          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,7 @@ int	get_height(char **map)
 
 char	**get_map(char *mapfile, t_vars *vars)
 {
+	char	**splited;
         char	*line;
 	char	*maplined;
 	int		fd;
@@ -58,7 +59,9 @@ char	**get_map(char *mapfile, t_vars *vars)
 	close(fd);
 	if (!maplined)
 		ft_message_error(vars, 0);
-	return (ft_split(maplined, '\n'));
+	splited = ft_split(maplined, '\n');
+	free(maplined);
+	return (splited);
 }
 
 void	get_player(t_vars *vars)
