@@ -6,7 +6,7 @@
 /*   By: lopie13 <lopie13@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/22 16:40:32 by mmata-al          #+#    #+#             */
-/*   Updated: 2024/07/23 17:57:43 by lopie13          ###   ########.fr       */
+/*   Updated: 2024/08/01 11:34:39 by lopie13          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,9 +52,11 @@ char	**get_map(char *mapfile, t_vars *vars)
 
 	line = "";
 	maplined = ft_strdup("");
+	printf("\n%s\n", mapfile);
 	fd = open(mapfile, O_RDONLY);
 	if (fd < 0)
-		ft_message_error(vars, 0);
+		ft_file_error(mapfile);
+	//ft_message_error(vars, 0);
 	maplined = liner(fd, line, maplined);
 	close(fd);
 	if (!maplined)

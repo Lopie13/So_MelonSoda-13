@@ -6,7 +6,7 @@
 /*   By: lopie13 <lopie13@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/06 21:00:37 by mmata-al          #+#    #+#             */
-/*   Updated: 2024/06/20 10:05:49 by lopie13          ###   ########.fr       */
+/*   Updated: 2024/08/01 11:36:34 by lopie13          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,14 @@ char	*error_message(t_map *map)
 
 void	ft_message_error(t_vars *vars, int assets)
 {
-	write(1, "ERROR\n", 7);
+	write(1, "ERROR\n", 6);
 	final_cleaner(vars, assets);
+	exit(1);
+}
+
+void	ft_file_error(char *file)
+{
+	ft_printf("%s\n", file);
 	exit(1);
 }
 

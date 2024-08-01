@@ -6,7 +6,7 @@
 /*   By: lopie13 <lopie13@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/15 18:28:00 by mmata-al          #+#    #+#             */
-/*   Updated: 2024/07/15 13:36:56 by lopie13          ###   ########.fr       */
+/*   Updated: 2024/08/01 11:33:09 by lopie13          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -112,5 +112,6 @@ void	move_down(t_vars *v);
 int	key_hook(int keycode, t_vars *vars);
 void	move_idk(t_vars *v);
 void	collected(t_vars *v);
+void	ft_file_error(char *file);
 
 #endif
