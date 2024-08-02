@@ -6,7 +6,7 @@
 /*   By: lopie13 <lopie13@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/06 21:00:37 by mmata-al          #+#    #+#             */
-/*   Updated: 2024/08/01 11:36:34 by lopie13          ###   ########.fr       */
+/*   Updated: 2024/08/01 12:46:20 by lopie13          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ void	ft_message_error(t_vars *vars, int assets)
 
 void	ft_file_error(char *file)
 {
-	ft_printf("%s\n", file);
+	ft_printf("can't open %s, or it doesn't exist.\n", file);
 	exit(1);
 }
 
