@@ -6,7 +6,7 @@
 /*   By: lopie13 <lopie13@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/15 18:28:00 by mmata-al          #+#    #+#             */
-/*   Updated: 2024/08/01 11:33:09 by lopie13          ###   ########.fr       */
+/*   Updated: 2024/08/22 00:24:31 by lopie13          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,11 +37,17 @@ typedef struct s_assets
 {
 	//t_imgs	*asset;
 	t_imgs		*chara;
+	t_imgs		*charaup;
+	t_imgs		*charaleft;
+	t_imgs		*chararight;
 	t_imgs		*ground;
 	t_imgs		*wall;
 	t_imgs		*door;
 	t_imgs		*coin;
 	t_imgs		*gwc;
+	t_imgs		*gwcl;
+	t_imgs		*gwcr;
+	t_imgs		*gwcu;
 	t_imgs		*gwd;
 	t_imgs		*gwcoll;
 
@@ -113,5 +119,6 @@ int	key_hook(int keycode, t_vars *vars);
 void	move_idk(t_vars *v);
 void	collected(t_vars *v);
 void	ft_file_error(char *file);
+void	move_idkup(t_vars *v);
 
 #endif

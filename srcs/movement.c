@@ -24,7 +24,7 @@ void	move_left(t_vars *v)
 		collected(v);
 	v->left = 1;
 	mlx_put_image_to_window(v->mlx, v->win,
-		v->assets->gwc->img,
+		v->assets->gwcl->img,
 		v->x_p, v->y_p);
 }
 
@@ -43,7 +43,7 @@ void	move_right(t_vars *v)
 		collected(v);
 	v->left = 0;
 	mlx_put_image_to_window(v->mlx, v->win,
-		v->assets->gwc->img,
+		v->assets->gwcr->img,
 		v->x_p, v->y_p);
 }
 
@@ -63,7 +63,7 @@ void	move_up(t_vars *v)
 		(v)->y_p -= 32;
 		put_text(v);
 	}
-	move_idk(v);
+	move_idkup(v);
 }
 
 void	move_down(t_vars *v)

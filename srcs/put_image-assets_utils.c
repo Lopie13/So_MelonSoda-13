@@ -33,6 +33,9 @@ void	assets_initiator2(t_vars *v)
 	v->assets->gwcoll = new_img(32, 32, v->mlx, v->win);
 	put_img_to_img(v->assets->gwcoll, v->assets->ground, 0, 0);
 	put_img_to_img(v->assets->gwcoll, v->assets->coin, 0, 0);
+	v->assets->gwcu = new_img(32, 32, v->mlx, v->win);
+	put_img_to_img(v->assets->gwcu, v->assets->ground, 0, 0);
+	put_img_to_img(v->assets->gwcu, v->assets->charaup, 0, 0);
 }
 
 void	assets_initiator(t_vars *v)
@@ -46,6 +49,15 @@ void	assets_initiator(t_vars *v)
 	v->assets->gwd = new_img(32, 32, v->mlx, v->win);
 	put_img_to_img(v->assets->gwd, v->assets->ground, 0, 0);
 	put_img_to_img(v->assets->gwd, v->assets->door, 0, 0);
+	v->assets->charaleft = new_file_img("assets/temp/walk-left.xpm", v->mlx, v->win);
+	v->assets->chararight = new_file_img("assets/temp/walk-right.xpm", v->mlx, v->win);
+	v->assets->charaup = new_file_img("assets/temp/walk-up.xpm", v->mlx, v->win);
+	v->assets->gwcl = new_img(32, 32, v->mlx, v->win);
+	put_img_to_img(v->assets->gwcl, v->assets->ground, 0, 0);
+	put_img_to_img(v->assets->gwcl, v->assets->charaleft, 0, 0);
+	v->assets->gwcr = new_img(32, 32, v->mlx, v->win);
+	put_img_to_img(v->assets->gwcr, v->assets->ground, 0, 0);
+	put_img_to_img(v->assets->gwcr, v->assets->chararight, 0, 0);
 	assets_initiator2(v);
 }
 

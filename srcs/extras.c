@@ -61,4 +61,18 @@ void	move_idk(t_vars *v)
 			v->x_p, v->y_p);
 }
 
+void	move_idkup(t_vars *v)
+{
+	/* if ((v)->map[((v)->y_p / 32)][((v)->x_p / 32)] == 'C')
+		collected(v); */
+	if (v->left == 1)
+	{
+		mlx_put_image_to_window(v->mlx, v->win,
+			v->assets->gwcu->img, v->x_p, v->y_p);
+	}
+	else
+		mlx_put_image_to_window(v->mlx, v->win,
+			v->assets->gwcu->img,
+			v->x_p, v->y_p);
+}
 //still have to make the collected function!!!
