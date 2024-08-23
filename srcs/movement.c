@@ -78,11 +78,11 @@ void	move_down(t_vars *v)
 		{
 			v->map[(v->y_p / 32) + 1][(v->x_p / 32)] = 'P';
 			collected(v);
-		}	
+		}
 		v->y_p += 32;
 		put_text(v);
 	}
 	move_idk(v);
 }
 
-//need to "create" exit_verifier and put_text
+//need to "create" exit_verifier and put_tet

@@ -6,7 +6,7 @@
 /*   By: lopie13 <lopie13@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/15 18:28:00 by mmata-al          #+#    #+#             */
-/*   Updated: 2024/08/22 00:24:31 by lopie13          ###   ########.fr       */
+/*   Updated: 2024/08/23 18:25:55 by lopie13          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,9 +84,9 @@ typedef struct s_map
 char	*ft_join_strings(char *s1, char *s2);
 char	**get_map(char *fullmap, t_vars *vars);
 void	ft_message_error(t_vars *vars, int assets);
-int	get_height(char **map);
-int	map_xloop(t_vars *vars, int x1, int y1, int map_y);
-int	ft_exit(t_vars *vars);
+int		get_height(char **map);
+int		map_xloop(t_vars *vars, int x1, int y1, int map_y);
+int		ft_exit(t_vars *vars);
 void	put_image_to_map(char p, int x1, int y1, t_vars *v);
 void	flood_checker(t_vars *vars, char **argv);
 void	flood_fill(char **map, int x, int y);
@@ -99,11 +99,11 @@ t_imgs	*new_img(int w, int h, t_vars *mlx, t_vars *window);
 t_imgs	*new_file_img(char *path, void *mlx, void *window);
 void	put_img_to_img(t_imgs *dst, t_imgs *src, int x, int y);
 char	*error_message(t_map *map);
-int	check_c(t_vars *vars);
-int	check_e(t_vars *vars);
+int		check_c(t_vars *vars);
+int		check_e(t_vars *vars);
 void	ft_error(t_vars *vars, char *message);
-int	ft_exit(t_vars *vars);
-int	ft_strcmp(char *s1, char *s2);
+int		ft_exit(t_vars *vars);
+int		ft_strcmp(char *s1, char *s2);
 void	assets_initiator(t_vars *v);
 void	invisible_door(t_vars *v, int x1, int y1);
 void	get_player(t_vars *vars);
@@ -115,7 +115,7 @@ void	move_left(t_vars *v);
 void	move_right(t_vars *v);
 void	move_up(t_vars *v);
 void	move_down(t_vars *v);
-int	key_hook(int keycode, t_vars *vars);
+int		key_hook(int keycode, t_vars *vars);
 void	move_idk(t_vars *v);
 void	collected(t_vars *v);
 void	ft_file_error(char *file);

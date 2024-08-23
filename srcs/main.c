@@ -6,7 +6,7 @@
 /*   By: lopie13 <lopie13@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/15 18:28:28 by mmata-al          #+#    #+#             */
-/*   Updated: 2024/08/01 11:47:31 by lopie13          ###   ########.fr       */
+/*   Updated: 2024/08/23 18:29:53 by lopie13          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,7 +78,7 @@ int	check_file(char *argv)
 
 int	main(int argc, char **argv)
 {
-	t_vars vars;
+	t_vars	vars;
 
 	if (argc != 2)
 	{
@@ -87,7 +87,6 @@ int	main(int argc, char **argv)
 	}
 	check_file(argv[1]);
 	vars.map = get_map(argv[1], &vars);
-//	do stuff
 	if (vars.map != NULL)
 	{
 		init_vars(&vars);
@@ -102,5 +101,4 @@ int	main(int argc, char **argv)
 		mlx_loop(vars.mlx);
 	}
 	return (final_cleaner (&vars, 1), 0);
-	//return (0);
 }

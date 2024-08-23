@@ -40,18 +40,18 @@ void	assets_initiator2(t_vars *v)
 
 void	assets_initiator(t_vars *v)
 {
-	v->assets->chara = new_file_img("assets/temp/character.xpm", v->mlx, v->win);
+	v->assets->chara = new_file_img("assets/temp/chara.xpm", v->mlx, v->win);
 	v->assets->ground = new_file_img("assets/temp/ground.xpm", v->mlx, v->win);
-	v->assets->door = new_file_img("assets/temp/closeddoor.xpm", v->mlx, v->win);
+	v->assets->door = new_file_img("assets/temp/closed.xpm", v->mlx, v->win);
 	v->assets->gwc = new_img(32, 32, v->mlx, v->win);
 	put_img_to_img(v->assets->gwc, v->assets->ground, 0, 0);
 	put_img_to_img(v->assets->gwc, v->assets->chara, 0, 0);
 	v->assets->gwd = new_img(32, 32, v->mlx, v->win);
 	put_img_to_img(v->assets->gwd, v->assets->ground, 0, 0);
 	put_img_to_img(v->assets->gwd, v->assets->door, 0, 0);
-	v->assets->charaleft = new_file_img("assets/temp/walk-left.xpm", v->mlx, v->win);
-	v->assets->chararight = new_file_img("assets/temp/walk-right.xpm", v->mlx, v->win);
-	v->assets->charaup = new_file_img("assets/temp/walk-up.xpm", v->mlx, v->win);
+	v->assets->charaleft = new_file_img("assets/temp/l.xpm", v->mlx, v->win);
+	v->assets->chararight = new_file_img("assets/temp/r.xpm", v->mlx, v->win);
+	v->assets->charaup = new_file_img("assets/temp/up.xpm", v->mlx, v->win);
 	v->assets->gwcl = new_img(32, 32, v->mlx, v->win);
 	put_img_to_img(v->assets->gwcl, v->assets->ground, 0, 0);
 	put_img_to_img(v->assets->gwcl, v->assets->charaleft, 0, 0);
@@ -63,7 +63,6 @@ void	assets_initiator(t_vars *v)
 
 void	put_image_to_map(char p, int x1, int y1, t_vars *v)
 {
-	//ft_printf("%c\n", v->map[0][0]);
 	if (p == '1')
 		mlx_put_image_to_window(v->mlx, v->win, v->assets->wall->img, x1, y1);
 	else if (p == 'C')

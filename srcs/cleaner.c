@@ -1,4 +1,3 @@
-
 #include "so_long.h"
 
 void	final_cleaner(t_vars *vars, int assets)

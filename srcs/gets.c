@@ -6,7 +6,7 @@
 /*   By: lopie13 <lopie13@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/22 16:40:32 by mmata-al          #+#    #+#             */
-/*   Updated: 2024/08/01 12:42:22 by lopie13          ###   ########.fr       */
+/*   Updated: 2024/08/23 18:33:43 by lopie13          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,6 @@ char	*liner(int fd, char *line, char *ml)
 		free(line);
 	}
 	return (ml);
-
 }
 
 int	get_height(char **map)
@@ -46,7 +45,7 @@ int	get_height(char **map)
 char	**get_map(char *mapfile, t_vars *vars)
 {
 	char	**splited;
-        char	*line;
+	char	*line;
 	char	*maplined;
 	int		fd;
 

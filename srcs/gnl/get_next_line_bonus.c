@@ -6,7 +6,7 @@
 /*   By: lopie13 <lopie13@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/23 11:46:45 by mmata-al          #+#    #+#             */
-/*   Updated: 2024/06/17 19:05:04 by lopie13          ###   ########.fr       */
+/*   Updated: 2024/08/23 18:34:09 by lopie13          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ char	*get_next_line(int fd)
 	soda = 0;
 	if (fd < 0 || fd > FOPEN_MAX)
 		return (NULL);
-	if (fd < 0 || BUFFER_SIZE < 1) //yes i know fd<0 is here twice, im lazy deal with it ahauwu
+	if (fd < 0 || BUFFER_SIZE < 1)
 	{
 		while (shira[fd][soda])
 			shira[fd][soda++] = '\0';

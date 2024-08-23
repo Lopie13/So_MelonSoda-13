@@ -1,6 +1,5 @@
 #include "so_long.h"
 
-
 char	unknown_element(t_vars *v, char c)
 {
 	int	x;
@@ -52,7 +51,6 @@ void	check_elements(t_vars *vars)
 		ft_error(vars, error_message(&map));
 }
 
-
 int	check_c(t_vars *vars)
 {
 	int	i;
@@ -62,10 +60,8 @@ int	check_c(t_vars *vars)
 	n = 0;
 	while (vars->map[i])
 	{
-		//ft_printf("%s\n", vars->map[i]);
 		while (vars->map[i][n] != '\0' && vars->map[i][n] != '\n')
 		{
-			//ft_printf("%c", vars->map[i][n]);
 			n++;
 			if (vars->map[i][n] == 'C')
 			{
@@ -74,11 +70,9 @@ int	check_c(t_vars *vars)
 				exit(1);
 			}
 		}
-		//ft_printf("\n");
 		n = 0;
 		i++;
 	}
-	//vars->map[0][0] = 1;
 	return (1);
 }
 
@@ -104,6 +98,5 @@ int	check_e(t_vars *vars)
 		n = 0;
 		i++;
 	}
-	//vars->map[0][0] = 1;
 	return (1);
 }
