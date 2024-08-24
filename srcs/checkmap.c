@@ -28,7 +28,6 @@ static void	check_is_rectangular(t_vars *vars)
 	height = get_height(vars->map);
 	while (map_y != height)
 	{
-		ft_printf("%s\n", vars->map[map_y]);
 		map_x = 0;
 		while (vars->map[map_y][map_x] != '\0')
 			map_x++;

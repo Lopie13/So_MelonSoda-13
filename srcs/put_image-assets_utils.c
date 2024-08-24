@@ -6,6 +6,10 @@ void	assets_cleaner2(t_vars *v)
 	free(v->assets->gwc);
 	mlx_destroy_image(v->mlx, v->assets->wall->img);
 	free(v->assets->wall);
+	mlx_destroy_image(v->mlx, v->assets->chararight->img);
+	free(v->assets->chararight);
+	mlx_destroy_image(v->mlx, v->assets->charaup->img);
+	free(v->assets->charaup);
 	free(v->assets);
 }
 
@@ -23,6 +27,14 @@ void	assets_cleaner(t_vars *v)
 	free(v->assets->gwd);
 	mlx_destroy_image(v->mlx, v->assets->gwcoll->img);
 	free(v->assets->gwcoll);
+	mlx_destroy_image(v->mlx, v->assets->gwcl->img);
+	free(v->assets->gwcl);
+	mlx_destroy_image(v->mlx, v->assets->gwcr->img);
+	free(v->assets->gwcr);
+	mlx_destroy_image(v->mlx, v->assets->gwcu->img);
+	free(v->assets->gwcu);
+	mlx_destroy_image(v->mlx, v->assets->charaleft->img);
+	free(v->assets->charaleft);
 	assets_cleaner2(v);
 }
 
