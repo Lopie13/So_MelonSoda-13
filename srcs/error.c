@@ -6,7 +6,7 @@
 /*   By: lopie13 <lopie13@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/06 21:00:37 by mmata-al          #+#    #+#             */
-/*   Updated: 2024/08/01 12:46:20 by lopie13          ###   ########.fr       */
+/*   Updated: 2024/09/19 12:16:26 by lopie13          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,17 +40,9 @@ void	ft_file_error(char *file)
 	exit(1);
 }
 
-/* void	ft_error(t_vars *vars, char *message)
+int	freemaplined(char *str)
 {
-	int	x;
-
-	x = 0;
-	while (vars->map[x])
-	{
-		free(vars->map[x]);
-		x++;
-	}
-	free (vars->map);
-	ft_printf("%s", message);
-	exit (1);
-} */
+	free(str);
+	ft_printf("Error: invalid map! (multiple \\n found)");
+	return (1);
+}

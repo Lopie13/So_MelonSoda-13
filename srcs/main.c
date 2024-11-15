@@ -6,7 +6,7 @@
 /*   By: lopie13 <lopie13@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/15 18:28:28 by mmata-al          #+#    #+#             */
-/*   Updated: 2024/08/23 18:29:53 by lopie13          ###   ########.fr       */
+/*   Updated: 2024/09/30 16:01:43 by lopie13          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,10 +81,10 @@ int	main(int argc, char **argv)
 	t_vars	vars;
 
 	if (argc != 2)
-	{
+		{
 		write(1, "ERROR: invalid number of arguments!\n", 36);
 		exit(1);
-	}
+		}
 	check_file(argv[1]);
 	vars.map = get_map(argv[1], &vars);
 	if (vars.map != NULL)

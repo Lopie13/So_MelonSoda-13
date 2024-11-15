@@ -6,7 +6,7 @@
 /*   By: lopie13 <lopie13@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/22 16:40:32 by mmata-al          #+#    #+#             */
-/*   Updated: 2024/08/23 18:33:43 by lopie13          ###   ########.fr       */
+/*   Updated: 2024/11/10 21:07:30 by lopie13          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,8 @@ char	*liner(int fd, char *line, char *ml)
 	while (line)
 	{
 		line = get_next_line(fd);
-		if (line == NULL || line[0] == '\n')
+		//printf("\nline: %s\n", line);
+		if (line == NULL)// || line[0] == '\n'
 		{
 			free(line);
 			break ;
@@ -42,6 +43,23 @@ int	get_height(char **map)
 	return (i);
 }
 
+int	check_nl(char *str)
+{
+	int	i;
+
+	i = 0;
+	while (str[i])
+	{
+		if (str[i] == '\n' && str[i + 1])
+		{
+			if (str[i + 1] == '\n')
+				return (1);
+		}
+		i++;	
+	}
+	return(0);
+}
+
 char	**get_map(char *mapfile, t_vars *vars)
 {
 	char	**splited;
@@ -50,6 +68,7 @@ char	**get_map(char *mapfile, t_vars *vars)
 	int		fd;
 
 	line = "";
+	printf("%s", mapfile);
 	maplined = ft_strdup("");
 	fd = open(mapfile, O_RDONLY);
 	if (fd < 0)
@@ -58,9 +77,12 @@ char	**get_map(char *mapfile, t_vars *vars)
 		ft_file_error(mapfile);
 	}
 	maplined = liner(fd, line, maplined);
+	//printf("\n\nmap: %s\n\n", maplined);
 	close(fd);
 	if (!maplined)
 		ft_message_error(vars, 0);
+	if (check_nl(maplined) == 1)
+		exit(freemaplined(maplined));
 	splited = ft_split(maplined, '\n');
 	free(maplined);
 	return (splited);

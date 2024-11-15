@@ -6,7 +6,7 @@
 /*   By: lopie13 <lopie13@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/15 18:28:00 by mmata-al          #+#    #+#             */
-/*   Updated: 2024/08/23 18:25:55 by lopie13          ###   ########.fr       */
+/*   Updated: 2024/09/19 12:16:30 by lopie13          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -120,5 +120,6 @@ void	move_idk(t_vars *v);
 void	collected(t_vars *v);
 void	ft_file_error(char *file);
 void	move_idkup(t_vars *v);
+int	freemaplined(char *str);
 
 #endif
